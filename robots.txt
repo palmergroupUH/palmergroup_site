@@ -1,0 +1,9 @@
+# Palmer Research Group @ University of Houston
+User-agent: *
+Allow: /
+
+Disallow: /resources/Prof_Jeremy_C_Palmer_CV.pdf
+
+# Sitemap reference
+Sitemap: https://raw.githubusercontent.com/palmergroupUH/palmergroup_site/refs/heads/main/sitemap.xml
+
