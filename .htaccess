@@ -1,0 +1,17 @@
+# FORCE HTTPS (only works if SSL exists)
+# If palmer.chee.uh.edu eventually gets/has SSL, this will auto-upgrade all HTTP to HTTPS.
+# Browsers must complete SSL handshake BEFORE .htaccess runs,
+# This block will not execute if there is no SSL.
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
+
+
+# REDIRECT SUBDOMAIN to GitHub Pages
+# Anyone visiting palmer.chee.uh.edu will be sent to GitHub Pages. Comment out with '#' to temporarily disable it.
+RewriteCond %{HTTP_HOST} ^palmer\.chee\.uh\.edu$ [NC]
+RewriteRule ^(.*)$ https://palmergroupuh.github.io/palmergroup_site/$1 [L,R=301]
+
+# PREVENT DIRECTORY LISTING (security)
+Options -Indexes
+
